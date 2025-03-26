@@ -1,0 +1,47 @@
+---
+description: 
+globs: *_controller.rb
+alwaysApply: false
+---
+ # Controller Rules
+
+## Patterns
+```ruby
+class *Controller < ApplicationController
+```
+
+## Guidelines
+- Keep controllers skinny
+- Use before_action for common setups
+- Implement strong parameters
+- Return appropriate HTTP status codes
+- Handle errors gracefully
+- Use service objects for complex operations
+- Follow RESTful conventions
+- Document non-standard actions
+
+## Examples
+```ruby
+class PostsController < ApplicationController
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  
+  def index
+    @posts = Post.all
+  end
+  
+  def create
+    @post = Post.new(post_params)
+    if @post.save
+      render json: @post, status: :created
+    else
+      render json: @post.errors, status: :unprocessable_entity
+    end
+  end
+  
+  private
+  
+  def post_params
+    params.require(:post).permit(:title, :content)
+  end
+end
+```

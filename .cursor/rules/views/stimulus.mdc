@@ -1,0 +1,41 @@
+---
+description: 
+globs: app/javasript/*.js
+alwaysApply: false
+---
+# Stimulus Controller Standards
+Description: Standards for Stimulus controllers
+Globs:
+  - app/javascript/controllers/**/*_controller.js
+
+## Core Principles
+- Follow Stimulus patterns @docs/frontend/stimulus_patterns.md
+- Use progressive enhancement @docs/frontend/progressive_enhancement.md
+- Keep controllers focused @docs/frontend/controller_organization.md
+
+## Controller Structure
+```javascript
+// controllers/*_controller.js
+export default class extends Controller {
+  static targets = [ ]
+  static values = { }
+  static classes = [ ]
+}
+```
+
+## Guidelines
+- Use consistent naming
+- Define targets for DOM elements when necessary
+- Use values for configuration
+- Follow event handling patterns
+
+## Testing
+- Follow test patterns @docs/testing/e2e.md
+
+## Examples
+See implementation examples in @docs/examples/stimulus/
+
+## Best Practices
+- Follow lifecycle hooks
+- Use cross controller event coordination
+- Document public API

@@ -1,0 +1,36 @@
+---
+description: 
+globs: *.rb
+alwaysApply: false
+---
+ # Base Ruby Standards
+Description: Core Ruby coding standards and patterns
+Globs: **/*.rb
+
+## Core Principles
+- Follow Ruby style guide
+- Keep methods under 25 lines
+- Use meaningful variable names
+- Document complex logic
+- Follow SOLID principles
+
+## Testing
+- Write unit tests for all methods
+- Follow test patterns
+- Maintain test coverage above 80%
+
+## Code Organization
+- One class per file
+- Follow naming conventions
+- Keep classes focused and small
+- Use modules for shared behavior
+
+## Error Handling
+- Use proper exception handling
+- Follow error patterns
+- Log errors appropriately
+
+## Performance
+- Follow optimization guidelines
+- Use proper memory management
+- Implement caching where necessary

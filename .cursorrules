@@ -1,0 +1,48 @@
+# Project Architecture
+- Follow Rails MVC architecture strictly
+- Use service objects for complex business logic
+- Implement Turbo Frames for partial page updates
+- Use Turbo Streams for real-time updates
+- Follow HTML-first design approach
+- Implement Stimulus controllers for interactive behavior
+- Follow REST conventions for API endpoints
+
+# Testing Standards
+- Maintain Playwright tests for E2E testing
+- Write unit tests for all business logic
+- Integration tests for critical paths
+- Test coverage minimum: 80%
+- Test Turbo Frame interactions
+- Test Stimulus controller behavior
+
+# Code Quality
+- Follow Ruby style guide
+- Keep methods under 20 lines
+- Use meaningful variable names
+- Document complex logic
+- Follow Stimulus patterns and conventions
+- Maintain clean HTML structure
+- Use CSS utility classes consistently
+
+# Performance
+- Use database indexing appropriately
+- Implement caching where necessary
+- Optimize asset loading
+- Monitor N+1 queries
+- Use Turbo Drive for navigation
+- Implement proper frame caching
+- Optimize Turbo Stream broadcasts
+
+# Security
+- Sanitize all user inputs
+- Use strong parameters in controllers
+- Implement proper authentication/authorization
+- Regular security audits
+- Secure Turbo Stream channels
+- Validate frame sources
+
+# Git Workflow
+- Use semantic commit messages
+- Keep PRs focused and small
+- Require code review before merge
+- Keep main/master branch stable

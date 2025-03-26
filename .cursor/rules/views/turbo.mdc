@@ -1,0 +1,66 @@
+---
+description: 
+globs: app/views/*.erb
+alwaysApply: false
+---
+ # Turbo Rules
+
+## Patterns
+```erb
+<%# Frames %>
+<%= turbo_frame_tag "frame_id" do %>
+<% end %>
+
+<%# Streams %>
+<%= turbo_stream.* %>
+```
+
+## Guidelines
+- Use meaningful frame IDs
+- Keep frame contexts isolated
+- Use proper stream actions (append, prepend, replace, remove)
+- Implement proper loading states
+- Handle frame validation errors
+- Follow progressive enhancement
+- Implement proper caching strategies
+- Use proper stream broadcasts
+- Document complex Turbo interactions
+
+## Examples
+```erb
+<%# Frame Example %>
+<%= turbo_frame_tag "user_form" do %>
+  <%= form_with(model: @user) do |f| %>
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <%= f.submit "Save", class: "button" %>
+  <% end %>
+<% end %>
+
+<%# Stream Example %>
+<%= turbo_stream.append "messages" do %>
+  <%= render partial: "messages/message", locals: { message: @message } %>
+<% end %>
+
+<%# Broadcast Example %>
+# In your model
+class Message < ApplicationRecord
+  after_create_commit -> { 
+    broadcast_append_to "messages"
+  }
+end
+```
+
+## Best Practices
+- Use proper frame targeting
+- Implement loading states
+- Handle errors gracefully
+- Use proper cache control
+- Follow Turbo Drive conventions
+- Implement proper form submissions
+- Use proper stream actions
+- Document broadcast patterns
+- Test Turbo interactions
+- Follow HTML-first approach
