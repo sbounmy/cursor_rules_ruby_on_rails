@@ -1,3 +1,10 @@
+There are key differences between User Rules and .cursorrules and .cursor/* :
+
+## Purpose:
+User Rules (in Cursor Settings): Define how the AI assistant should think and respond during conversations (thinking process, reasoning approach, output format)
+.cursorrules: Define project-specific technical standards and conventions (architecture, testing, code quality, etc.)
+
+
 Cursor > Settings > Rules > User Rules
 
 ```
