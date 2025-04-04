@@ -1,0 +1,8 @@
+---
+description: 
+globs: spec/fixtures/**/*.yml
+alwaysApply: false
+---
+## Core principles
+
+- Follow the naming convention in folder

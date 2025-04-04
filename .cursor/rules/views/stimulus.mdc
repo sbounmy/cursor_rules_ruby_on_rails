@@ -12,6 +12,7 @@ Globs:
 - Follow Stimulus patterns @docs/frontend/stimulus_patterns.md
 - Use progressive enhancement @docs/frontend/progressive_enhancement.md
 - Keep controllers focused @docs/frontend/controller_organization.md
+- Check stimulus-components if a common behavior already exist. @https://www.stimulus-components.com/docs/ if yes install with `importmap pin` and register in [application.js](mdc:app/javascript/application.js) `Stimulus.register("component-name", ComponentName)`
 
 ## Controller Structure
 ```javascript

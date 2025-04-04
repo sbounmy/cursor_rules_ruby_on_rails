@@ -1,6 +1,38 @@
 ---
 description: 
-globs: app/components/
+globs: app/components/**/*.erb,app/components/**/*.rb
 alwaysApply: false
 ---
- 
+ Description: Standards for View Components class and template
+
+
+ ## Core Principles
+
+ - When rendering collection prefer `with_collection` over `new` :
+
+```ruby+erb
+ # Not Good
+ <% @papers.each do |paper| %>
+    <%= render Papers::ItemComponent.new(paper: ) %>
+ <% end %>
+
+ # Good 
+ <%= render Papers::ItemComponent.with_collection(@papers) %>
+ ```
+
+ - Any logic related code should live in the .rb rather than .erb e.g `if, array, etc...`
+
+- Create generic and reusable components when possible
+e.g Instead of creating 'ThemeDropDownComponent', create DropDownComponent. If the behavior / style is too different you can either:
+   -  create a `Themes::DropdownComponent` in `app/components/themes/dropdown_component.{rb|erb}` then inherit from DropdownComponent
+   - try to customize with block (but DropdownComponent must support it) e.g
+   ``` <%= render DropdownComponent.new |dropdown| %>
+      <%= dropdown.with_header do %>
+         ...
+      <% end %>
+   <% end %>
+
+## Guideline
+
+- Use consistent naming. e.g you create a login component representing User model then : `Users::LoginComponent` lives in `app/components/users/login_component.{rb|erb}`
+- 

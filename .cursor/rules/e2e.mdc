@@ -1,0 +1,10 @@
+---
+description: 
+globs: e2e/**/*.spec.js
+alwaysApply: false
+---
+## Core Principles
+- Follow plawyrgith docs guide
+- use fixtures as much as possible to speed up test
+- use vcr cassettes when handling 3rd party queries
+- create reusable code for human to maintain / debug
